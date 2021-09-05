@@ -11,12 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // shown in multitasking
       title: 'XO Game',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        backgroundColor: MColors.background
       ),
+      // Strating Screen of the app
       home: HomeScreen(),
     );
   }

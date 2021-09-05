@@ -2,12 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MColors {
-
-  // BuiltIn Colors
-  static final Color white = Colors.white;
-  static final Color black = Colors.black;
-  static final Color systemGrey = CupertinoColors.systemGrey;
-
   // Theme 1 Colors
   static final Color background = Color(0xFF14bdac);
   static final Color grid = Color(0xFF0da192);

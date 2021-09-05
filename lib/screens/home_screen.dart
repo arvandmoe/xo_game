@@ -29,26 +29,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: AspectRatio(
-                      aspectRatio: 1 / 1, // or 1 for simplicity
+                      aspectRatio: 1 / 1, // or simply 1
                       child: GridView.builder(
-                          itemCount: 9,
-                          shrinkWrap: true,
+                          itemCount: gridItems.length, 
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 3,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8),
                           itemBuilder: (BuildContext context, int index) {
                             return GestureDetector(
-                              onTap: () {
-                                print('Index of current element : $index');
-                                if(gridItems[index] == '' && !gameFinished) {
-                                  setState(() {
-                                    gridItems[index] = oTurn ? 'O' : 'X';
-                                    oTurn = !oTurn;
-                                  });
-                                }
-                                _checkResult();
-                              },
+                              onTap: () => _gridOnTap(index),
                               child: Container(
                                 decoration: BoxDecoration(color: Colors.white60, borderRadius: BorderRadius.circular(8)),
                                 child: Center(
@@ -131,6 +121,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  void _gridOnTap(int index) {
+     print('Index of current element : $index');
+     if(gridItems[index] == '' && !gameFinished) {
+       setState(() {
+         gridItems[index] = oTurn ? 'O' : 'X';
+         oTurn = !oTurn;
+       });
+     }
+     _checkResult();
   }
 
   void _checkResult() {
