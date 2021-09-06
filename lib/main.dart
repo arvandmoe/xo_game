@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:xo_game/values/colors.dart';
 
 import 'screens/home_screen.dart';
 
